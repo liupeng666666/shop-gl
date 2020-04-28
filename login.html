@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>铸皓团购平台</title>
+    <link href="bootstrap/css/bootstrap.min.css?v3.3.7" rel="stylesheet">
+    <link href="plugin/animate.css" rel="stylesheet">
+    <link href="dist/css/style.css" rel="stylesheet">
+    <link href="dist/css/login.css" rel="stylesheet">
+    <script src="dist/js/jquery.min.js"></script>
+</head>
+<body class="login-page authentication">
+<div class="container  animated flipInX">
+    <div class="card-background"></div>
+    <div class="loginbox">
+        <div class="login-title">
+            <h2>铸皓团购平台</h2>
+            <div class="msg"><span>login</span></div>
+        </div>
+        <div class="col-md-12">
+            <form id="" action="" method="">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" placeholder="用户名" id="username">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" placeholder="密码" id="password">
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
+                            <input type="password" class="form-control" placeholder="验证码" id="yzm">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-right v-img">
+                        <img src="../../buyshop/Auth/SysBuyYzm">
+                    </div>
+                </div>
+                <!--/row-->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <input type="checkbox" name="rememberme" id="rememberme"><label for="rememberme"
+                                                                                        class="remember-link">记住密码？</label>
+                    </div>
+                </div>
+                <!--/row-->
+                <div>
+                    <button class="btn btn-block btn-blue" type="button" onclick="login()">立即登录<span
+                            class="glyphicon glyphicon-arrow-right"></span></button>
+                </div>
+
+
+                <div class="loginoption">
+                    Copyright ©
+                    <script>var copyrightdate = new Date();
+                    this.year = copyrightdate.getFullYear();
+                    document.write(this.year);</script>
+                    铸皓科技.
+                </div><!--loginoption-->
+
+            </form>
+        </div>
+        <!--loginbox_inner-->
+    </div>
+    <!--loginbox-->
+</div>
+<!--/container-->
+
+<div class="theme-bg"></div>
+
+<!--公共提示层-->
+<div class="pop-dialog" id="tip-public">
+    <div class="tip-inner">
+        <div class="tip-header bg-primary">
+            <button type="button" class="close" onClick="hidePop('#tip-public')"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4>重要提示</h4>
+        </div>
+        <div class="tip-content">
+            提示内容
+        </div>
+        <div class="tip-footer">
+            <button type="button" class="btn btn-default" onClick="hidePop('#tip-public')">取消</button>
+        </div>
+    </div>
+</div>
+<!--pop-window -->
+
+<script src="dist/js/sign-in.js"></script>
+<script>
+    function showPop(dd) {//要显示的图层以及宽度
+        //"use strict";
+        $(dd).fadeIn();
+        $("body").addClass("modal-open");
+    }
+
+
+    function hidePop(dd) {
+        //"use strict";
+        $(dd).fadeOut();
+        $("body").removeClass("modal-open");
+    }
+</script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script src="whpjs/login.js"></script>
+</body>
+</html>

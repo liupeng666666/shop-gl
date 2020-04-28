@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>铸皓科技团购平台</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/jscrollpane/jquery.jscrollpane.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/skin.css">
+    <link rel="stylesheet" href="plugins/datetime/css/bootstrap-datetimepicker.min.css"/>
+    <script src="plugins/jquery/jquery.min.js"></script>
+</head>
+
+<body class="fixed-sidebar fixed-header  content-appear">
+<!-- Preloader -->
+<div class="loading-container">
+    <div id="status">
+        <div class="sk-wave">
+            <div class="sk-rect sk-rect1"></div>
+            <div class="sk-rect sk-rect2"></div>
+            <div class="sk-rect sk-rect3"></div>
+            <div class="sk-rect sk-rect4"></div>
+            <div class="sk-rect sk-rect5"></div>
+        </div>
+        <div class="preloader-text">LOADING...</div>
+    </div>
+</div>
+<!-- Preloader -->
+<div class="wrapper">
+    <!-- Sidebar -->
+    <div class="site-overlay"></div>
+    <!-- Header -->
+    <div class="site-header">
+        <nav class="navbar navbar-light">
+            <div class="navbar-left">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo"></div>
+                </a>
+                <div class="toggle-button dark sidebar-toggle-first float-left hidden-md-up">
+                    <span class="hamburger"></span>
+                </div>
+                <div class="toggle-button-second dark float-right hidden-md-up">
+                    <i class="fa fa-sign-out"></i>
+                </div>
+
+            </div>
+            <div class="navbar-right navbar-toggleable-sm hidden-sm-down" id="collapse-1">
+                <div class="toggle-button light sidebar-toggle-second float-left hidden-sm-down">
+                    <span class="hamburger"></span>
+                </div>
+                <div class="toggle-button-second light float-right hidden-sm-down">
+                    <i class="fa fa-sign-out"></i>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="nav-item hidden-sm-down">
+                        <a class="nav-link toggle-fullscreen" href="#">
+                            <i class="ti-fullscreen"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <div class="site-sidebar">
+        <div class="custom-scroll custom-scroll-light">
+            <div class="user-panel">
+                <div class="float-left image">
+                    <img src="" id="left_user_img" class="rounded-circle" alt="User Image">
+                </div>
+                <div class="float-left info tooltip-info">
+                    <p id="left_user_nickname"></p>
+                    <a href="userset.html"><i class="fa fa-user-circle-o"></i> 设置</a>
+                    <a href="login-log.html" data-toggle="tooltip" data-placement="right" data-color="tooltip-red"
+                       title="" id="iplog"><i class="fa fa-circle text-success"></i> 登陆正常</a>
+                    <!--<a href="login-log.html" data-toggle="tooltip"  data-placement="right" data-color="tooltip-red" title=""  id="iplog"><i class="fa fa-circle text-danger"></i> 异地登录</a>-->
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="site-content">
+        <!-- Content -->
+        <div class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 page-title">
+                        <h3>优惠券管理</h3>
+                    </div>
+                </div>
+                <!--/.row-->
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 mb-sm-3">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    onclick="add()"><i class="fa fa-plus"></i>添加
+                                            </button>
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    onclick="update()"><i class="fa fa-pencil"></i>修改
+                                            </button>
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    onclick="zstate(1)"><i class="fa fa-times"></i>删除
+                                            </button>
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    onclick="zstate(2)"><i class="fa fa-key"></i>启用
+                                            </button>
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    onclick="zstate(3)"><i class="fa fa-bolt"></i>禁止
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 mb-sm-3">
+                                        <form class="form-inline float-sm-none float-lg-right" role="form">
+                                            <div>
+                                                <select class="form-control" id="classid">
+                                                    <option value=''>分类</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <select class="form-control" id="style">
+                                                    <option value=''>类型</option>
+                                                    <option value='0'>全场通用</option>
+                                                    <option value='1'>新用户</option>
+                                                    <option value='2'>分类</option>
+                                                    <option value='3'>指定商品</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <select class="form-control" id="state">
+                                                    <option value=''>状态</option>
+                                                    <option value="0">启用</option>
+                                                    <option value="1">禁用</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <select class="form-control" id="sq">
+                                                    <option value=''>数量</option>
+                                                    <option value="1">未售罄</option>
+                                                    <option value="0">已售罄</option>
+
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <select class="form-control" id="type">
+                                                    <option value=''>开启状态</option>
+                                                    <option value="0">指定日期</option>
+                                                    <option value="1">周期</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <input type="text" class="form-control" style="width: 180px;" name=""
+                                                       placeholder="优惠券/分类/商品名称" id="name">
+                                                <button type="button" class="btn btn-primary" onclick="select()"><i
+                                                        class="fa fa-search"></i></button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <!--/.row-->
+                                <table class="table table-hover" id="dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>标题</th>
+                                        <th>累计金额</th>
+                                        <th>立减金额</th>
+                                        <th>类型</th>
+                                        <th>发放数量</th>
+                                        <th>已完成数量</th>
+                                        <th>创建时间</th>
+                                        <th>开启类型</th>
+                                        <th>开启时间</th>
+                                        <th>结束时间</th>
+                                        <th>领取周期</th>
+                                        <th>分类头像</th>
+                                        <th>分类名称</th>
+                                        <th>商品头像</th>
+                                        <th>商品名称</th>
+                                        <th>状态</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="money_html">
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!--/.card-block-->
+
+                        </div>
+                        <!--/.card-->
+                    </div>
+                    <!--/.col-->
+                </div>
+                <!--/.row-->
+
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 text-sm-left">2019 © 济南铸皓信息科技有限公司</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</div>
+<!--/.wrapper-->
+<!--添加-->
+<div class="modal light_bg fade" id="addItem" tabindex="-1" role="dialog" aria-labelledby="addItem" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加优惠券</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="form-control-label">优惠券名称:</label>
+                        <input name="" type="text" class="form-control" value="" id="add_title">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">累计金额:</label>
+                        <input name="" type="number" class="form-control" value="" id="add_cumulative">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">立减金额:</label>
+                        <input name="" type="number" class="form-control" value="" id="add_reduce">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label">优惠券类型:</label>
+                        <select class="form-control" id="add_style" onchange="xz_style(this.value)">
+                            <option value='0'>全场通用</option>
+                            <option value='1'>新用户</option>
+                            <option value='2'>分类</option>
+                            <option value='3'>指定商品</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">数量:</label>
+                        <input name="" type="number" class="form-control" value="" id="add_number">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label">开启类型:</label>
+                        <select class="form-control" id="add_type" onchange="xz_type(this.value)">
+                            <option value='0'>指定日期</option>
+                            <option value='1'>周期</option>
+                        </select>
+                    </div>
+                    <div class="form-group open-end">
+                        <label class="form-control-label">开启时间:</label>
+                        <input type="text" value="" id="add_opentime" class="form-control"
+                               data-date-format="yyyy-mm-dd hh:ii">
+                    </div>
+                    <div class="form-group  open-end">
+                        <label class="form-control-label">结束时间:</label>
+                        <input type="text" value="" id="add_endtime" class="form-control"
+                               data-date-format="yyyy-mm-dd hh:ii">
+
+                    </div>
+                    <div class="form-group open-cycle" style="display: none;">
+                        <label class="form-control-label">领取周期:</label>
+                        <input name="" type="number" class="form-control" value="" id="add_cycle">
+                    </div>
+                    <div class="form-group style-class" style="display: none;">
+                        <label class="form-control-label">分类:</label>
+                        <select class="form-control" id="add_classid">
+
+                        </select>
+                    </div>
+                    <div class="form-group style-goods" style="display: none;">
+                        <label class="form-control-label"><span class="text-danger">*</span>快速搜索商品:</label>
+                        <div>
+                            <input name="" type="text" class="form-control mb-3" value="" placeholder="商品搜索"
+                                   style="width: 90%;float: left;" id="add_sx">
+                            <button type="button" class="btn btn-primary" style="float: left;" onclick="xz_input()"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                        <select class="form-control" id="add_select">
+                        </select>
+
+                    </div>
+                    <div class="form-group text-danger" style="display: none;" id="add_danger">
+                        <i class="fa fa- fa-exclamation-circle"></i> <span id="add_tishi"></span>
+                    </div>
+                    <!--/.form-group-->
+
+                </form>
+
+            </div>
+            <!--modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="qd_add()">确定</button>
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!--modal-content-->
+    </div>
+    <!--modal-dialog-->
+</div>
+<!--end modal-->
+<!--/.wrapper-->
+<!--修改-->
+<div class="modal light_bg fade" id="EditItem" tabindex="-1" role="dialog" aria-labelledby="addItem" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">修改积分</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+                        <label class="form-control-label">优惠券名称:</label>
+                        <input name="" type="text" class="form-control" value="" id="edit_title">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">累计金额:</label>
+                        <input name="" type="number" class="form-control" value="" id="edit_cumulative">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">立减金额:</label>
+                        <input name="" type="number" class="form-control" value="" id="edit_reduce">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label">优惠券类型:</label>
+                        <select class="form-control" id="edit_style" onchange="edit_xz_style(this.value)">
+                            <option value='0'>全场通用</option>
+                            <option value='1'>新用户</option>
+                            <option value='2'>分类</option>
+                            <option value='3'>指定商品</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">数量:</label>
+                        <input name="" type="number" class="form-control" value="" id="edit_number">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label">开启类型:</label>
+                        <select class="form-control" id="edit_type" onchange="edit_xz_type(this.value)">
+                            <option value='0'>指定日期</option>
+                            <option value='1'>周期</option>
+                        </select>
+                    </div>
+                    <div class="form-group edit-open-end">
+                        <label class="form-control-label">开启时间:</label>
+                        <input type="text" value="" id="edit_opentime" class="form-control"
+                               data-date-format="yyyy-mm-dd hh:ii">
+                    </div>
+                    <div class="form-group  edit-open-end">
+                        <label class="form-control-label">结束时间:</label>
+                        <input type="text" value="" id="edit_endtime" class="form-control"
+                               data-date-format="yyyy-mm-dd hh:ii">
+
+                    </div>
+                    <div class="form-group edit-open-cycle" style="display: none;">
+                        <label class="form-control-label">领取周期:</label>
+                        <input name="" type="number" class="form-control" value="" id="edit_cycle">
+                    </div>
+                    <div class="form-group edit-style-class" style="display: none;">
+                        <label class="form-control-label">分类:</label>
+                        <select class="form-control" id="edit_classid">
+
+                        </select>
+                    </div>
+                    <div class="form-group edit-style-goods" style="display: none;">
+                        <label class="form-control-label"><span class="text-danger">*</span>快速搜索商品:</label>
+                        <div>
+                            <input name="" type="text" class="form-control mb-3" value="" placeholder="商品搜索"
+                                   style="width: 90%;float: left;" id="edit_sx">
+                            <button type="button" class="btn btn-primary" style="float: left;" onclick="xz_input()"><i
+                                    class="fa fa-search"></i></button>
+                        </div>
+                        <select class="form-control" id="edit_select">
+                        </select>
+
+                    </div>
+                    <div class="form-group text-danger" style="display: none;" id="edit_danger">
+                        <i class="fa fa- fa-exclamation-circle"></i> <span id="edit_tishi"></span>
+                    </div>
+                    <!--/.form-group-->
+
+                </form>
+
+            </div>
+            <!--modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="qd_edit()">确定</button>
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!--modal-content-->
+    </div>
+    <!--modal-dialog-->
+</div>
+<!--end modal-->
+
+<div class="modal dark_bg fade" id="delItem" tabindex="-1" role="dialog" aria-labelledby="delItem" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">删除提示</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                确定要删除？
+            </div>
+            <!--modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="del_qd()">确定</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!--modal-content-->
+    </div>
+    <!--modal-dialog-->
+</div>
+<!--end modal-->
+
+<!--公用提示-->
+<div class="modal fade" id="showPrompt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width: 300px;">
+        <div class="modal-content prompt-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="state_css"><i class="fa fa-check fa-lg bg-success"></i>已禁用</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!--公共提示层-->
+<div class="modal dark_bg fade" id="tip-public" tabindex="-1" role="dialog" aria-labelledby="delItem"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">重要提示</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" id="tip-public-div">
+                确定要删除？
+            </div>
+            <!--modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!--modal-content-->
+    </div>
+    <!--modal-dialog-->
+</div>
+<!--JS -->
+<script type="text/javascript" src="plugins/tether/js/tether.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plugins/detectmobilebrowser/detectmobilebrowser.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/mwheelIntent.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="plugins/jquery-fullscreen-plugin/jquery.fullscreen-min.js"></script>
+<script type="text/javascript" src="assets/js/countUp.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="plugins/datatables/js/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/js/dataTables.bootstrap4.js"></script>
+<script src="plugins/datatables/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="plugins/datetime/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="plugins/datetime/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="plugins/fileinput/fileinput.min.js"></script>
+<script src="whpjs/public.js"></script>
+<script src="whpjs/coupon.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script>
+</script>
+
+</body>
+
+</html>

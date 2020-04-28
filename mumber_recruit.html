@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>铸皓科技团购平台</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/jscrollpane/jquery.jscrollpane.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/skin.css">
+    <script src="plugins/jquery/jquery.min.js"></script>
+</head>
+<body class="fixed-sidebar fixed-header  content-appear">
+<!-- Preloader -->
+<div class="loading-container">
+    <div id="status">
+        <div class="sk-wave">
+            <div class="sk-rect sk-rect1"></div>
+            <div class="sk-rect sk-rect2"></div>
+            <div class="sk-rect sk-rect3"></div>
+            <div class="sk-rect sk-rect4"></div>
+            <div class="sk-rect sk-rect5"></div>
+        </div>
+        <div class="preloader-text">LOADING...</div>
+    </div>
+</div>
+<!-- Preloader -->
+<div class="wrapper">
+    <!-- Sidebar -->
+    <div class="site-overlay"></div>
+    <!-- Header -->
+    <div class="site-header">
+        <nav class="navbar navbar-light">
+            <div class="navbar-left">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo"></div>
+                </a>
+                <div class="toggle-button dark sidebar-toggle-first float-left hidden-md-up">
+                    <span class="hamburger"></span>
+                </div>
+                <div class="toggle-button-second dark float-right hidden-md-up">
+                    <i class="fa fa-sign-out"></i>
+                </div>
+
+            </div>
+            <div class="navbar-right navbar-toggleable-sm hidden-sm-down" id="collapse-1">
+                <div class="toggle-button light sidebar-toggle-second float-left hidden-sm-down">
+                    <span class="hamburger"></span>
+                </div>
+                <div class="toggle-button-second light float-right hidden-sm-down">
+                    <i class="fa fa-sign-out"></i>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="nav-item hidden-sm-down">
+                        <a class="nav-link toggle-fullscreen" href="#">
+                            <i class="ti-fullscreen"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <div class="site-sidebar">
+        <div class="custom-scroll custom-scroll-light">
+            <div class="user-panel">
+                <div class="float-left image">
+                    <img src="" id="left_user_img" class="rounded-circle" alt="User Image">
+                </div>
+                <div class="float-left info tooltip-info">
+                    <p id="left_user_nickname"></p>
+                    <a href="userset.html"><i class="fa fa-user-circle-o"></i> 设置</a>
+                    <a href="login-log.html" data-toggle="tooltip" data-placement="right" data-color="tooltip-red"
+                       title="" id="iplog"><i class="fa fa-circle text-success"></i> 登陆正常</a>
+                    <!--<a href="login-log.html" data-toggle="tooltip"  data-placement="right" data-color="tooltip-red" title=""  id="iplog"><i class="fa fa-circle text-danger"></i> 异地登录</a>-->
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="site-content">
+        <!-- Content -->
+        <div class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 page-title">
+                        <h3>团长招募</h3>
+                    </div>
+                </div>
+                <!--/.row-->
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-block">
+
+                                <!--/.row-->
+                                <table class="table table-hover" id="dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th width="30px"></th>
+                                        <th class="text-center" width="40px">申请人头像</th>
+                                        <th width="120px">申请人昵称</th>
+                                        <th width="80px">真实姓名</th>
+                                        <th width="110px">电话</th>
+                                        <th width="90px">所在区域</th>
+                                        <th width="90px">申请小区</th>
+                                        <th width="160px">创建时间</th>
+                                        <th class="text-center" width="40px">团长头像</th>
+                                        <th width="90px">团长昵称</th>
+                                        <th width="90px">团长真实姓名</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="recruit_html">
+
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!--/.card-block-->
+
+                        </div>
+                        <!--/.card-->
+                    </div>
+                    <!--/.col-->
+                </div>
+                <!--/.row-->
+
+
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 text-sm-left">2019 © 济南铸皓信息科技有限公司</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</div>
+<!--/.wrapper-->
+
+
+<!--JS -->
+<script type="text/javascript" src="plugins/tether/js/tether.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plugins/detectmobilebrowser/detectmobilebrowser.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/mwheelIntent.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="plugins/jquery-fullscreen-plugin/jquery.fullscreen-min.js"></script>
+<script type="text/javascript" src="assets/js/countUp.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="plugins/datatables/js/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/js/dataTables.bootstrap4.js"></script>
+<script src="plugins/datatables/js/dataTables.responsive.min.js"></script>
+
+<script type="text/javascript" src="plugins/fileinput/fileinput.min.js"></script>
+<script src="whpjs/public.js"></script>
+<script src="whpjs/mumber-recruit.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script>
+
+</script>
+
+
+</body>
+</html>

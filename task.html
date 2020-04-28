@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>铸皓科技团购平台</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/jscrollpane/jquery.jscrollpane.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/skin.css">
+    <script src="plugins/jquery/jquery.min.js"></script>
+</head>
+<body class="fixed-sidebar fixed-header  content-appear">
+<!-- Preloader -->
+<div class="loading-container">
+    <div id="status">
+        <div class="sk-wave">
+            <div class="sk-rect sk-rect1"></div>
+            <div class="sk-rect sk-rect2"></div>
+            <div class="sk-rect sk-rect3"></div>
+            <div class="sk-rect sk-rect4"></div>
+            <div class="sk-rect sk-rect5"></div>
+        </div>
+        <div class="preloader-text">LOADING...</div>
+    </div>
+</div>
+<!-- Preloader -->
+<div class="wrapper">
+    <!-- Sidebar -->
+    <div class="site-overlay"></div>
+    <!-- Header -->
+    <div class="site-header">
+        <nav class="navbar navbar-light">
+            <div class="navbar-left">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo"></div>
+                </a>
+                <div class="toggle-button dark sidebar-toggle-first float-left hidden-md-up">
+                    <span class="hamburger"></span>
+                </div>
+                <div class="toggle-button-second dark float-right hidden-md-up">
+                    <i class="fa fa-sign-out"></i>
+                </div>
+
+            </div>
+            <div class="navbar-right navbar-toggleable-sm hidden-sm-down" id="collapse-1">
+                <div class="toggle-button light sidebar-toggle-second float-left hidden-sm-down">
+                    <span class="hamburger"></span>
+                </div>
+                <div class="toggle-button-second light float-right hidden-sm-down">
+                    <i class="fa fa-sign-out"></i>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="nav-item hidden-sm-down">
+                        <a class="nav-link toggle-fullscreen" href="#">
+                            <i class="ti-fullscreen"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <div class="site-sidebar">
+        <div class="custom-scroll custom-scroll-light">
+            <div class="user-panel">
+                <div class="float-left image">
+                    <img src="" id="left_user_img" class="rounded-circle" alt="User Image">
+                </div>
+                <div class="float-left info tooltip-info">
+                    <p id="left_user_nickname"></p>
+                    <a href="userset.html"><i class="fa fa-user-circle-o"></i> 设置</a>
+                    <a href="login-log.html" data-toggle="tooltip" data-placement="right" data-color="tooltip-red"
+                       title="" id="iplog"><i class="fa fa-circle text-success"></i> 登陆正常</a>
+                    <!--<a href="login-log.html" data-toggle="tooltip"  data-placement="right" data-color="tooltip-red" title=""  id="iplog"><i class="fa fa-circle text-danger"></i> 异地登录</a>-->
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-title">MENU</li>
+                <li class="active">
+                    <a href="index.html" class="waves-effect  waves-light">
+                        <span class="s-icon"><i class="ti-home"></i></span>
+                        <span class="s-text">首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="monitor.html" class="waves-effect  waves-light">
+                        <span class="s-icon"><i class="ti-desktop"></i></span>
+                        <span class="s-text">资源监控</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="task.html" class="waves-effect  waves-light">
+                        <span class="s-icon"><i class="ti-harddrives"></i></span>
+                        <span class="s-text">任务管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="plan.html" class="waves-effect  waves-light">
+                        <span class="s-icon"><i class="ti-calendar"></i></span>
+                        <span class="s-text">计划管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="template.html" class="waves-effect  waves-light">
+                        <span class="s-icon"><i class="ti-ruler-pencil"></i></span>
+                        <span class="s-text">模板管理</span>
+                    </a>
+                </li>
+                <li class="with-sub">
+                    <a href="#" class="waves-effect  waves-light">
+                        <span class="s-caret"><i class="fa fa-angle-down"></i></span>
+                        <span class="s-icon"><i class="ti-layers-alt"></i></span>
+                        <span class="s-text">日志管理</span>
+                    </a>
+                    <ul>
+                        <li><a href="s-systemlog.html">系统日志</a></li>
+                        <li><a href="s-tasklog.html">任务日志</a></li>
+                        <li><a href="login-log.html">登录日志</a></li>
+                    </ul>
+                </li>
+                <li class="with-sub">
+                    <a href="#" class="waves-effect  waves-light">
+                        <span class="s-caret"><i class="fa fa-angle-down"></i></span>
+                        <span class="s-icon"><i class="ti-settings"></i></span>
+                        <span class="s-text">系统管理</span>
+                    </a>
+                    <ul>
+                        <li><a href="s-manager.html">用户管理</a></li>
+                        <li><a href="s-style.html">参数设置</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="site-content">
+        <!-- Content -->
+        <div class="content-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 page-title">
+                        <h3>任务管理</h3>
+                    </div>
+                </div>
+                <!--/.row-->
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 mb-sm-3">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    data-target="#addItem"><i class="fa fa-plus"></i>添加
+                                            </button>
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    data-target="#editItem"><i class="fa fa-pencil"></i>修改
+                                            </button>
+                                            <button class="btn btn-primary" type="button" data-toggle="modal"
+                                                    data-target="#delItem"><i class="fa fa-times"></i>删除
+                                            </button>
+                                            <button class="btn btn-primary" type="button"><i
+                                                    class="fa fa-file-excel-o"></i>导出
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--/.col-->
+                                    <div class="col-md-6 col-sm-12 mb-sm-3">
+                                        <form class="form-inline float-sm-none float-lg-right" role="form">
+                                            <div class="form-group">
+                                                <select class="form-control">
+                                                    <option>全部类型</option>
+                                                    <option>数据库备份</option>
+                                                    <option>健康检查</option>
+                                                </select>
+                                                <label class="sr-only">关键字搜索</label>
+                                                <input type="text" class="form-control" style="width: 180px;" name=""
+                                                       placeholder="任务名称">
+                                                <button type="button" class="btn btn-primary"><i
+                                                        class="fa fa-search"></i></button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    <!--/.col-->
+                                </div>
+                                <!--/.row-->
+                                <table class="table table-hover" id="dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th width="20px"><input type="checkbox"></th>
+                                        <th width="200px">任务名称</th>
+                                        <th width="110px">任务类型</th>
+                                        <th>配置信息</th>
+                                        <th width="110px">最新执行结果</th>
+                                        <th width="160px">创建时间</th>
+                                        <th width="100px">创建人</th>
+                                        <th width="160px">最后编辑日期</th>
+                                        <th width="100px">最后编辑人</th>
+                                        <th width="160px">备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>X战主机数据库备份</td>
+                                        <td>数据库备份</td>
+                                        <td></td>
+                                        <td><span class="status success">已备份</span></td>
+                                        <td>2017-06-18 10:23:12</td>
+                                        <td>pricedsjisddf</td>
+                                        <td>2017-06-20 18:23:21</td>
+                                        <td>pricedsjisddf</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>Y战主机数据库备份</td>
+                                        <td>数据库备份</td>
+                                        <td></td>
+                                        <td><span class="status warning">待备份</span></td>
+                                        <td>2017-06-18 10:22:12</td>
+                                        <td>pricedsjisddf</td>
+                                        <td>2017-06-21 14:23:21</td>
+                                        <td>pricedsjisddf</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>Z战主机数据库备份</td>
+                                        <td>数据库备份</td>
+                                        <td></td>
+                                        <td><span class="status success">已备份</span></td>
+                                        <td>2017-06-18 10:15:12</td>
+                                        <td>pricedsjisddf</td>
+                                        <td>2017-06-19 18:23:21</td>
+                                        <td>pricedsjisddf</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>X战主机自检</td>
+                                        <td>健康检查</td>
+                                        <td></td>
+                                        <td><span class="status success">健康</span></td>
+                                        <td>2017-06-18 10:12:12</td>
+                                        <td>pricedsjisddf</td>
+                                        <td>2017-06-20 08:23:21</td>
+                                        <td>pricedsjisddf</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>R战主机自检</td>
+                                        <td>健康检查</td>
+                                        <td></td>
+                                        <td><span class="status success">健康</span></td>
+                                        <td>2017-06-18 10:11:12</td>
+                                        <td>pricedsjisddf</td>
+                                        <td>2017-06-20 18:34:21</td>
+                                        <td>pricedsjisddf</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>O战主机自检</td>
+                                        <td>健康检查</td>
+                                        <td></td>
+                                        <td><span class="status danger">报警</span></td>
+                                        <td>2017-06-18 09:23:12</td>
+                                        <td>pricedsjisddf</td>
+                                        <td>2017-06-23 18:21:21</td>
+                                        <td>pricedsjisddf</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>I战主机自检</td>
+                                        <td>健康检查</td>
+                                        <td></td>
+                                        <td><span class="status success">健康</span></td>
+                                        <td>2017-06-18 09:23:01</td>
+                                        <td>pricedsjisddf</td>
+                                        <td>2017-06-19 18:23:21</td>
+                                        <td>pricedsjisddf</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!--/.card-block-->
+
+                        </div>
+                        <!--/.card-->
+                    </div>
+                    <!--/.col-->
+                </div>
+                <!--/.row-->
+
+
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 text-sm-left">2017 © 德州富路汽车智能化研究有限公司</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</div>
+<!--/.wrapper-->
+
+<!--添加-->
+<div class="modal light_bg fade" id="addItem" tabindex="-1" role="dialog" aria-labelledby="addItem" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加任务</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>任务类型:</label>
+                        <select class="form-control">
+                            <option>选择任务类型</option>
+                            <option>数据库备份</option>
+                            <option>健康检查</option>
+                        </select>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>任务名称:</label>
+                        <input name="" type="text" class="form-control" value="">
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>选择模板:</label>
+                        <select class="form-control">
+                            <option>选择模板</option>
+                            <option>数据库备份</option>
+                            <option>健康检查</option>
+                        </select>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>配置信息:</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label">备注:</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group text-danger">
+                        <i class="fa fa- fa-exclamation-circle"></i> 错误提示
+                    </div>
+                    <!--/.form-group-->
+
+                </form>
+
+            </div>
+            <!--modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!--modal-content-->
+    </div>
+    <!--modal-dialog-->
+</div>
+<!--end modal-->
+
+<!--修改-->
+<div class="modal light_bg fade" id="editItem" tabindex="-1" role="dialog" aria-labelledby="editItem"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">修改任务</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>任务类型:</label>
+                        <select class="form-control">
+                            <option>选择任务类型</option>
+                            <option>数据库备份</option>
+                            <option>健康检查</option>
+                        </select>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>任务名称:</label>
+                        <input name="" type="text" class="form-control" value="">
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>选择模板:</label>
+                        <select class="form-control">
+                            <option>选择模板</option>
+                            <option>数据库备份</option>
+                            <option>健康检查</option>
+                        </select>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label"><span class="text-danger">*</span>配置信息:</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group">
+                        <label class="form-control-label">备注:</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <!--/.form-group-->
+                    <div class="form-group text-danger">
+                        <i class="fa fa- fa-exclamation-circle"></i> 错误提示
+                    </div>
+                    <!--/.form-group-->
+
+                </form>
+
+            </div>
+            <!--modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!--modal-content-->
+    </div>
+    <!--modal-dialog-->
+</div>
+<!--end modal-->
+
+<!--删除-->
+<div class="modal dark_bg fade" id="delItem" tabindex="-1" role="dialog" aria-labelledby="delItem" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">删除提示</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                确定要删除？
+            </div>
+            <!--modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+        <!--modal-content-->
+    </div>
+    <!--modal-dialog-->
+</div>
+<!--end modal-->
+
+<!--JS -->
+<script type="text/javascript" src="plugins/tether/js/tether.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plugins/detectmobilebrowser/detectmobilebrowser.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/mwheelIntent.js"></script>
+<script type="text/javascript" src="plugins/jscrollpane/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="plugins/jquery-fullscreen-plugin/jquery.fullscreen-min.js"></script>
+<script type="text/javascript" src="assets/js/countUp.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="plugins/datatables/js/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/js/dataTables.bootstrap4.js"></script>
+<script src="plugins/datatables/js/dataTables.responsive.min.js"></script>
+
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script>
+    /* data tables*/
+    $('#dataTables-example').DataTable({
+        responsive: true,
+        pageLength: 10,
+        bLengthChange: false,
+        searching: false,
+        sPaginationType: "full_numbers",
+        oLanguage: {
+            oPaginate: {
+                sFirst: "<<",
+                sPrevious: "<",
+                sNext: ">",
+                sLast: ">>"
+            },
+            sInfo: "共  _TOTAL_ 项纪录,  _PAGE_ / _PAGES_ 页",
+            sEmptyTable: "没有找到相应结果",
+
+        },
+        bAutoWidth: false,
+        aaSorting: [[5, 'desc']],
+        aoColumnDefs: [
+            {"bSortable": false, "aTargets": [0, 1, 2, 3, 4, 6, 8, 9]}
+        ]
+
+    });
+</script>
+
+
+</body>
+</html>
